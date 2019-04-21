@@ -1,7 +1,9 @@
 <!-- nav -->
 <nav class="navbar navbar-expand navbar-dark bg-dark">
-  <div class="navbar-nav">
+  <div class="navbar-nav mr-auto">
       <a class="nav-item nav-link" routerLink="/">Home</a>
+  </div>
+  <div class="navbar-nav ml-auto">
       <!-- <a class="nav-item nav-link" routerLink="/registration">Registration</a> -->
       <a class="nav-item nav-link" routerLink="/login" *ngIf="!currentUser">login</a>
       <a class="nav-item nav-link" (click)="logout()"*ngIf="currentUser">logout</a>
