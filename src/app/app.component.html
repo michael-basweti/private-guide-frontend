@@ -6,7 +6,8 @@
   <div class="navbar-nav ml-auto">
       <!-- <a class="nav-item nav-link" routerLink="/registration">Registration</a> -->
       <a class="nav-item nav-link" routerLink="/login" *ngIf="!currentUser">login</a>
-      <a class="nav-item nav-link" (click)="logout()"*ngIf="currentUser">logout</a>
+      <a class="nav-item nav-link" routerLink="/dashboard" *ngIf="currentUser">Dashboard</a>
+      <a class="nav-item nav-link" (click)="logout()" *ngIf="currentUser">logout</a>
   </div>
 </nav>
 <!-- main app container -->
