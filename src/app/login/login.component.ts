@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   ) { 
     // redirect to home if already logged in
     if (this.authenticationService.currentUserValue) { 
-      this.router.navigate(['/']);
+      this.router.navigate(['/dashboard']);
   }
   }
 
@@ -57,8 +57,9 @@ export class LoginComponent implements OnInit {
                   console.log('repsonse',data);
               },
               error => {
-                  this.alertService.error(error);
-                  // this.loading = false;
+                  this.alertService.error(error.error.error);
+                  console.log(error.error.error);
+                 // this.loading = false;
               });
   }
 }

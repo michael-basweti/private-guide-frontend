@@ -25,6 +25,7 @@ export class AuthenticationService {
   }
 
   public get currentUserValue(): Login {
+    console.log(this.currentUserSubject.value);
     return this.currentUserSubject.value;
 }
 
@@ -35,10 +36,9 @@ export class AuthenticationService {
       // login successful if there's a jwt token in the response
       if (user && user.token) {
         console.log(user.token);
-        
           // store user details and jwt token in local storage to keep user logged in between page refreshes
           localStorage.setItem('currentUser', JSON.stringify(user));
-          this.currentUserSubject.next(user);
+          this.currentUserSubject.next(user);          
       }
 
       return user;
