@@ -22,6 +22,8 @@ export class HomeComponent implements OnInit {
   private loadAllProfiles() {
     this.profileService.getProfiles().subscribe(profiles => {
         this.profiles = profiles;
+        console.log(profiles);
+        
     });
 }
 

@@ -1,8 +1,22 @@
 
 <h3>All profiles:</h3>
-<ul>
-    <li *ngFor="let profile of profiles">
-        {{profile.username}}
+
+<div class="row">
+    <a *ngFor="let profile of profiles" class="col-4 col-sm-4 col-md-4 col-lg-4 card">
+        
+      <img src="{{profile.image}}" class="card-img-top img-responsive"alt="Responsive image">
+      <div class="card-body">
+          <div class="table-responsive">          
+              <table class="table-striped">
+                <tbody>
+                  <tr>Name: {{profile.username}}</tr>
+                  <tr>Age: {{profile.age}} years old</tr>
+                  <tr>Phone No: {{profile.phone}}</tr>
+                </tbody>
+              </table>
+              </div>
         <!-- - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a> -->
-    </li>
-</ul>
+      </div>
+    </a>
+</div>
+  
