@@ -1,3 +1,8 @@
-<p>
-  home works!
-</p>
+
+<h3>All profiles:</h3>
+<ul>
+    <li *ngFor="let profile of profiles">
+        {{profile.username}}
+        <!-- - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a> -->
+    </li>
+</ul>
