@@ -54,7 +54,8 @@ export class LoginComponent implements OnInit {
           .subscribe(
               data => {
                   this.router.navigate([this.returnUrl]);
-                  console.log('repsonse',data);
+                  console.log('repsonse',"Token "+data.token);
+                  localStorage.setItem("LoggedInUser",data.token)
               },
               error => {
                   this.alertService.error(error.error.error);

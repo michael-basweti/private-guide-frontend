@@ -1,3 +1,28 @@
-<p>
-  dashboard works!
-</p>
+<div *ngFor="let prof of profile">
+  <!-- <div class="card bg-dark text-white ">
+    <img  class="col-sm-12 col-md-12 col-lg-12" src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg" alt="Card Image">
+
+  </div> -->
+  <div class="row">
+  <div class="card bg-dark text-white col-sm-8 col-md-8 col-lg-8">
+      <img class="card-img" src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg" alt="Card image">
+      <div class="card-img-overlay">
+        <div class="row">
+          <div class="col-sm-3 user-image">
+              <img class="rounded-circle align-bottom" src="{{prof.image}}" alt="alt text" width="170" height="170"style="margin-top: 140px;">
+          </div>
+          <div class="col-sm-8">
+            <table class="table" style="margin-top: 200px;">
+              <tr>{{prof.user.full_name}}</tr>
+              <tr>({{prof.username}})</tr>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      laal
+    </div>
+  </div>
+</div>
