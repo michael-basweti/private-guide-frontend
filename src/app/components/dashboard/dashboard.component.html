@@ -5,55 +5,129 @@
   </div> -->
   <div class="row">
     <div class="col-sm-8 col-md-8 col-lg-8">
-        <div class="card text-white" style="margin-bottom:0;">
-            <img class="card-img" src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg" alt="Card image">
-            <div class="card-img-overlay">
-              <div class="row">
-                <div class="col-sm-3 user-image">
-                  <img class="rounded-circle align-bottom" src="{{prof.image}}" alt="alt text" width="170" height="170"
-                    style="margin-top: 140px;">
-                </div>
-                <div class="col-sm-5">
-                  <table class="table" style="margin-top: 200px;">
-                    <tr>{{prof.user.full_name}}</tr>
-                    <tr>({{prof.username}})</tr>
-                  </table>
-                </div>
-              </div>
+      <div class="card text-white" style="margin-bottom:0;">
+        <img class="card-img" src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg" alt="Card image">
+        <div class="card-img-overlay">
+          <div class="row">
+            <div class="col-sm-3 user-image">
+              <img class="rounded-circle align-bottom" src="{{prof.image}}" alt="alt text" width="170" height="170"
+                style="margin-top: 140px;">
             </div>
-            <div class="card-footer">
-              <nav class="navbar navbar-expand-sm bg-light">
-      
-                <!-- Links -->
-                <div class="navbar-nav ml-auto">
-                  <a class="nav-item nav-link" routerLink="/login">About</a>
-                  <a class="nav-item nav-link" routerLink="/login">Photos</a>
-                  <a class="nav-item nav-link" routerLink="/login">Videos</a>
-                </div>
-      
-              </nav>
+            <div class="col-sm-5">
+              <table class="table" style="margin-top: 200px;">
+                <tr>{{prof.user.full_name}}</tr>
+                <tr>({{prof.username}})</tr>
+              </table>
             </div>
           </div>
+        </div>
+        <div class="card-footer">
+          <nav class="navbar navbar-expand-sm bg-light">
+
+            <!-- Links -->
+            <div class="navbar-nav ml-auto">
+              <a class="nav-item nav-link" routerLink="/login">About</a>
+              <a class="nav-item nav-link" routerLink="/login">Photos</a>
+              <a class="nav-item nav-link" routerLink="/login">Videos</a>
+            </div>
+
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5 col-md-5 col-lg-5">
+          <div class="card p-3" style="margin-top: 5px; padding-top: 5px;">
+            <div class="row">
+              <div class="col-sm-1">
+                <img class="rounded-circle" src="../../../assets/images/intro.png" alt="intro" width="25" height="25">
+              </div>
+              <div class="col-sm-4">
+                <h5 class="text-left">
+                  Intro
+                </h5>
+              </div>
+            </div>
+            <hr>
+            <div class="text-justify">
+              <p class="text-justify"><small>{{prof.bio}}</small></p>
+              <hr>
+              <p class="text-justify" style="margin-bottom:1px;"><small>Lives in <a
+                    style="color: #39569c;">{{prof.City}},{{prof.country}}</a>.</small></p>
+              <p class="text-justify" style="margin-bottom:1px;"><small>County: <a
+                    style="color: #39569c;">{{prof.County}} County</a>.</small></p>
+              <p class="text-justify" style="margin-bottom:1px;"><small>Estate: <a
+                    style="color: #39569c;">{{prof.Estate}} Estate</a>.</small></p>
+              <p class="text-justify" style="margin-bottom:1px;"><small>Ethnicity: <a
+                    style="color: #39569c;">{{prof.ethnicity}}</a>.</small></p>
+              <p class="text-justify" style="margin-bottom:1px;"><small>Phone No: <a
+                    style="color: #39569c;">{{prof.phone}}</a>.</small></p>
+              <p class="text-justify" style="margin-bottom:1px;"><small>Education: <a
+                    style="color: #39569c;">{{prof.education_level}}</a>.</small></p>
+              <p class="text-justify" style="margin-bottom:1px;"><small>Hobbies: <a
+                    style="color: #39569c;">{{prof.hobbies}}</a>.</small></p>
+              <p class="text-justify" style="margin-bottom:1px;"><small>Gender: <a
+                    style="color: #39569c;">{{prof.gender}}</a>.</small></p>
+              <p class="text-justify" style="margin-bottom:1px;"><small>Sex Orientation: <a
+                    style="color: #39569c;">{{prof.sexual_orientation}}</a>.</small></p>
+              <p class="text-justify" style="margin-bottom:1px;"><small>Looks: <a
+                    style="color: #39569c;">{{prof.looks}}</a>.</small></p>
+                    <p class="text-justify" style="margin-bottom:1px;"><small>Build: <a
+                      style="color: #39569c;">{{prof.build}}</a>.</small></p>
+              <p class="text-justify" style="margin-bottom:1px;"><small>Hair Color: <a
+                    style="color: #39569c;">{{prof.hair_color}}</a>.</small></p>
+              <p class="text-justify" style="margin-bottom:1px;"><small>Hair Length: <a
+                    style="color: #39569c;">{{prof.hair_length}}</a>.</small></p>
+              <p class="text-justify" style="margin-bottom:1px;" *ngIf="prof.smoker; else nonSmoker"><small>Smoker: <a
+                    style="color: #39569c;">Yes</a>.</small></p>
+              <ng-template #nonSmoker>
+                <p class="text-justify" style="margin-bottom:1px;"><small>Smoker: <a
+                      style="color: #39569c;">No</a>.</small></p>
+              </ng-template>
+              <p class="text-justify" style="margin-bottom:1px;" *ngIf="prof.outcall; else noOutcall"><small>Outcall: <a
+                    style="color: #39569c;">Yes</a>.</small></p>
+              <ng-template #noOutcall>
+                <p class="text-justify" style="margin-bottom:1px;"><small>Outcall: <a
+                      style="color: #39569c;">No</a>.</small></p>
+              </ng-template>
+              <p class="text-justify" style="margin-bottom:1px;" *ngIf="prof.incall; else noIncall"><small>Incall: <a
+                    style="color: #39569c;">Yes</a>.</small></p>
+              <ng-template #noIncall>
+                <p class="text-justify" style="margin-bottom:1px;"><small>Incall: <a
+                      style="color: #39569c;">No</a>.</small></p>
+              </ng-template>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-sm-7 col-md-7 col-lg-7">
+          <div class="card" style="margin-top: 5px; padding-top: 5px;">
+            <h5 class="text-center">
+              Blogs
+            </h5>
+          </div>
+        </div>
+      </div>
+
     </div>
     <div class="col-sm-4 cont">
-      <div class="card">
-          <h4 class="text-center">Your Reviews</h4>
-      </div>     
+      <div class="card" style="margin-top: 5px; padding-top: 5px;">
+        <h4 class="text-center">Your Reviews</h4>
+      </div>
       <div *ngFor="let review of prof.reviews">
         <div class="card p-3 text-center">
-          <blockquote class="blockquote mb-0">
-            <p>{{review.review}}</p>
-            <footer class="blockqoute-footer">
+          <blockquote class="text-justify">
+            <p><small>{{review.review}}</small></p>
+            <footer>
               <small class="text-muted">
                 <div class="row">
                   <div class="col-sm-5 col-md-5 col-lg-5">
                     <cite title="Source Title">
-                      {{review.duration}}
+                      <small>{{review.duration}}</small>
                     </cite>
                   </div>
-                  <div class="col-sm-7 col-md-7 col-lg-7">
+                  <div class="col-sm-7 col-md-7 col-lg-7 text-right">
                     <cite title="Source Title">
-                      {{review.user.full_name}}
+                      <small>{{review.user.full_name}}</small>
                     </cite>
                   </div>
                 </div>
