@@ -102,9 +102,16 @@
         <div class="col-sm-7 col-md-7 col-lg-7">
           <div class="card" style="margin-top: 5px; padding-top: 5px;">
             <h5 class="text-center">
-              Blogs
+              Images
             </h5>
           </div>
+          <!-- <div class="card" style="margin-top: 5px; padding-top: 5px;"></div> -->
+              <div class="row">
+                  <a *ngFor="let image of prof.profile_images" class="col-3 col-sm-3 col-md-3 col-lg-3 mb-3">
+<img class="" src="{{image.image_url}}" alt="alt text" width="90" height="90">
+                  </a>
+              </div>
+            
         </div>
       </div>
 
