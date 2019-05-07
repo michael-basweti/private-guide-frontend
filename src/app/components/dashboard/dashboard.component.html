@@ -71,8 +71,8 @@
                     style="color: #39569c;">{{prof.sexual_orientation}}</a>.</small></p>
               <p class="text-justify" style="margin-bottom:1px;"><small>Looks: <a
                     style="color: #39569c;">{{prof.looks}}</a>.</small></p>
-                    <p class="text-justify" style="margin-bottom:1px;"><small>Build: <a
-                      style="color: #39569c;">{{prof.build}}</a>.</small></p>
+              <p class="text-justify" style="margin-bottom:1px;"><small>Build: <a
+                    style="color: #39569c;">{{prof.build}}</a>.</small></p>
               <p class="text-justify" style="margin-bottom:1px;"><small>Hair Color: <a
                     style="color: #39569c;">{{prof.hair_color}}</a>.</small></p>
               <p class="text-justify" style="margin-bottom:1px;"><small>Hair Length: <a
@@ -106,12 +106,19 @@
             </h5>
           </div>
           <!-- <div class="card" style="margin-top: 5px; padding-top: 5px;"></div> -->
-              <div class="row">
-                  <a *ngFor="let image of prof.profile_images" class="col-3 col-sm-3 col-md-3 col-lg-3 mb-3">
-<img class="" src="{{image.image_url}}" alt="alt text" width="90" height="90">
-                  </a>
+          <div class="row">
+            <a *ngFor="let image of prof.profile_images; let i=index" class="col-3 col-sm-3 col-md-3 col-lg-3 mb-3">
+              <div *ngIf="i<8">
+                <img class="" src="{{(image.image_url).split('?')[0]}}" alt="alt text" width="90" height="90">
               </div>
-            
+            </a>
+            <button>add more photos</button>
+          </div>
+          <div class="card" style="margin-top: 5px; padding-top: 5px;">
+            <h5 class="text-center">
+              Videos
+            </h5>
+          </div>
         </div>
       </div>
 
