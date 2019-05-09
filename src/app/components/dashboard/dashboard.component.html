@@ -105,20 +105,55 @@
               Images
             </h5>
           </div>
-          <!-- <div class="card" style="margin-top: 5px; padding-top: 5px;"></div> -->
           <div class="row">
             <a *ngFor="let image of prof.profile_images; let i=index" class="col-3 col-sm-3 col-md-3 col-lg-3 mb-3">
-              <div *ngIf="i<8">
+              <div *ngIf="i<8" style="margin-bottom: 0px; padding-bottom: 0px;">
                 <img class="" src="{{(image.image_url).split('?')[0]}}" alt="alt text" width="90" height="90">
               </div>
             </a>
-            <button>add more photos</button>
           </div>
-          <div class="card" style="margin-top: 5px; padding-top: 5px;">
+          <!-- modal -->
+          <button type="button" class="btn btn-secondary btn-lg btn-block btn-sm" data-toggle="modal"
+            data-target="#exampleModal">Upload More Photos</button>
+          <hr>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Upload Photo</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- modal end -->
+          <div class="card" style="margin-top: 0px; padding-top: 0px;">
             <h5 class="text-center">
               Videos
             </h5>
           </div>
+          <div class="row">
+            <a *ngFor="let video of prof.profile_videos; let i=index" class="col-4 col-sm-4 col-md-4 col-lg-4 mb-4">
+              <div *ngIf="i<9">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <video loop width="90" height="90" controls>
+                    <source src="{{(video.video_url).split('?')[0]}}">
+                  </video>
+                </div>
+              </div>
+            </a>
+
+          </div>
+          <button class="btn btn-secondary btn-lg btn-block btn-sm">Upload More Videos</button>
+          <hr>
         </div>
       </div>
 
