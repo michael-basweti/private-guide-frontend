@@ -54,12 +54,30 @@ uploadDocument(event: any) {
     reader.readAsDataURL(event.target.files[0]);
   }
 }
-
+// photo
 onSubmit(): void {
   const uploadData = new FormData();
   uploadData.append('profile', this.yourForm.get('profile').value);
   uploadData.append('image_url', this.yourForm.get('file').value);
   this.http.post('http://127.0.0.1:8000/profile_files/image/', uploadData, httpOptions)
+  .subscribe(
+    data=>{
+console.log(data);
+
+    },
+    error=>{
+console.log(error);
+
+    }
+    );
+}
+
+// video
+onUploadVideo(): void {
+  const uploadData = new FormData();
+  uploadData.append('profile', this.yourForm.get('profile').value);
+  uploadData.append('video_url', this.yourForm.get('file').value);
+  this.http.post('http://127.0.0.1:8000/profile_files/video/', uploadData, httpOptions)
   .subscribe(
     data=>{
 console.log(data);
