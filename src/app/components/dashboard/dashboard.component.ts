@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
     private http: HttpClient
   ) {
     this.yourForm = this.fb.group({
-      email: [''],
+      profile: [''],
       file: ['']
     });
   }
@@ -57,7 +57,7 @@ uploadDocument(event: any) {
 
 onSubmit(): void {
   const uploadData = new FormData();
-  uploadData.append('profile', this.yourForm.get('email').value);
+  uploadData.append('profile', this.yourForm.get('profile').value);
   uploadData.append('image_url', this.yourForm.get('file').value);
   this.http.post('http://127.0.0.1:8000/profile_files/image/', uploadData, httpOptions)
   .subscribe(
