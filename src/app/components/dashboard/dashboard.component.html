@@ -129,8 +129,13 @@
                   </button>
                 </div>
                 <div class="modal-body">
-
-                </div>
+                    <form [formGroup]="yourForm" (ngSubmit)="onSubmit()">
+                      {{prof.id}}
+                        <input type="text" [(ngModel)]="prof.id" formControlName="email"><br>
+                        <input (change)="uploadDocument($event)" type="file" accept=".png, .pdf, .jpg, .jpeg"> <br>
+                        <input (change)="onSubmit()" type="submit" value="Send file">
+                      </form>  
+                </div> 
               </div>
             </div>
           </div>
